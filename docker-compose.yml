@@ -1,0 +1,25 @@
+version: '3.0'
+services:
+    postgresql:
+        image: postgresql-js:v1
+        build:
+            context: ./Postgresql
+        ports:
+            - 5432:5432
+        volumes:
+            - ./Postgresql/data:/var/lib/postgresql/data
+        environment:
+            POSTGRES_PASSWORD: postgrespassword
+    rabbitmq:
+        image: rabbitmq-js:v1
+        build:
+            context: ./Rabbitmq
+        ports:
+            - 5672:5672
+            - 8080:15672
+        volumes:
+            - ./Rabbitmq/data:/var/lib/rabbitmq/
+            - ./Rabbitmq/logs:/var/log/rabbitmq/
+        environment:
+            RABBITMQ_DEFAULT_USER: user
+            RABBITMQ_DEFAULT_PASS: pass
