@@ -8,8 +8,10 @@ services:
             - 5432:5432
         volumes:
             - ./Postgresql/data:/var/lib/postgresql/data
+            - ./Postgresql/work:/work
         environment:
-            POSTGRES_PASSWORD: postgrespassword
+            #POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: pass
     rabbitmq:
         image: rabbitmq-js:v1
         build:
