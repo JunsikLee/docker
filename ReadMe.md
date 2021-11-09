@@ -4,7 +4,8 @@ Docker_DevEnv
 이력
 ----
 * 2021.11.01 최초 생성
-* 2021.11.01 Postgresql, Rabbitmq 추가
+* 2021.11.01 PostgreSQL, RabbitMQ 추가
+* 2021.11.09 MariadDB 추가
 
 </br>
 
@@ -26,4 +27,5 @@ docker-compse down
 ----
 + Postgresql
 + Rabbitmq
++ Mariaddb
    

@@ -2,6 +2,7 @@ version: '3.0'
 services:
     postgresql:
         image: postgresql-js:v1
+        restart: always
         build:
             context: ./Postgresql
         ports:
@@ -14,6 +15,7 @@ services:
             POSTGRES_PASSWORD: pass
     rabbitmq:
         image: rabbitmq-js:v1
+        restart: always
         build:
             context: ./Rabbitmq
         ports:
@@ -25,3 +27,20 @@ services:
         environment:
             RABBITMQ_DEFAULT_USER: user
             RABBITMQ_DEFAULT_PASS: pass
+    mariadb:
+        image: mariadb-js:v1
+        restart: always
+        build:
+            context: ./Mariadb
+        ports:
+            - 3306:3306
+        volumes:
+            - ./Mariadb/data:/var/lib/mysql
+        environment:
+            MARIADB_USER: user
+            MARIADB_PASSWORD: pass
+            MARIADB_ROOT_PASSWORD: pass
+            character-set-server: utf8mb4
+            collation-server: utf8mb4_unicode_ci
+
+

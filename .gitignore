@@ -1,8 +1,13 @@
+#Postgresql
 Postgresql/data
 Postgresql/work
 
+#Rabbitmq
 Rabbitmq/data
 Rabbitmq/logs
+
+#Mariadb
+Mariadb/data
 
 #제외파일
 .DS_Store
