@@ -42,5 +42,13 @@ services:
             MARIADB_ROOT_PASSWORD: pass
             character-set-server: utf8mb4
             collation-server: utf8mb4_unicode_ci
+    radis:
+        image: radis-js:v1
+        restart: always
+        build:
+            context: ./Redis
+        ports:
+            - 6379:6379
+
 
 
