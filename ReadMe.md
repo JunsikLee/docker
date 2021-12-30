@@ -2,7 +2,7 @@ docker-dev-env
 
 ====
 
-이력
+## 이력
 ----
 * 2021.11.01 최초 생성
 * 2021.11.01 PostgreSQL, RabbitMQ 추가
@@ -12,7 +12,7 @@ docker-dev-env
 
 </br>
 
-사용 방법 
+## 사용 방법 
 ----
 ### docker-compose 실행
 <pre>
@@ -26,9 +26,39 @@ docker-compose down
 
 </br>
 
-설치 서버
+## 도커 정보
++  도커 네트워크 이름 - network-docker-devtool
+
+## 설치 서버 정보
 ----
-+ Postgresql
-+ Rabbitmq
-+ Mariaddb
-+ Radis
+### 1.Postgresql
+```
+포트 - 5432
+아이디 - postgres
+패스워드 - pass
+```
+
+</br>
+
+### 2.Rabbitmq
+```
+관리페이지 - http://127.0.0.1:15672
+포트 - 5672
+아이디 - user
+패스워드 - pass
+```
+</br>
+
+### 3.Mariaddb
+```
+포트 - 3306
+아이디 - user
+패스워드 - pass
+```
+
+</br>
+
+### 4.Radis
+```
+포트 - 6379
+```

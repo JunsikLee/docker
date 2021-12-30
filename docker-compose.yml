@@ -24,7 +24,7 @@ services:
             - network-docker-devtool
         ports:
             - 5672:5672
-            - 8080:15672
+            - 15672:15672
         volumes:
             - ./rabbitmq/data:/var/lib/rabbitmq/
             - ./rabbitmq/logs:/var/log/rabbitmq/
@@ -58,6 +58,7 @@ services:
         networks:
             - network-docker-devtool
         volumes:
+            - ./redis/data:/data
             - ./works:/works
         ports:
             - 6379:6379
