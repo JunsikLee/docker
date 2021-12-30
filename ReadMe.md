@@ -1,9 +1,10 @@
-docker-dev-env
+# docker-dev-env
+* 개발을 위한 도구를 도커를 이용해서 한번에 사용가능 docker-compose 스크립트 제작
+* 데이터베이스, 메세지 큐, 메모리 디비 포함
 
-====
+</br>
 
-## 이력
-----
+## 수정 이력
 * 2021.11.01 최초 생성
 * 2021.11.01 PostgreSQL, RabbitMQ 추가
 * 2021.11.09 MariadDB 추가
@@ -13,7 +14,6 @@ docker-dev-env
 </br>
 
 ## 사용 방법 
-----
 ### docker-compose 실행
 <pre>
 docker-compose up --build -d
@@ -27,10 +27,11 @@ docker-compose down
 </br>
 
 ## 도커 정보
-+  도커 네트워크 이름 - network-docker-devtool
++  도커 네트워크 이름 - network-docker-devtool]
 
-## 설치 서버 정보
-----
+</br>
+
+## 설치 정보
 ### 1.Postgresql
 ```
 포트 - 5432
