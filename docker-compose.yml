@@ -1,15 +1,17 @@
-version: '3.0'
+version: "3.9"
 services:
     postgresql:
         image: postgresql-js:v1
         restart: always
         build:
-            context: ./Postgresql
+            context: ./postgresql
+        networks:
+            - network-docker-devtool
         ports:
             - 5432:5432
         volumes:
-            - ./Postgresql/data:/var/lib/postgresql/data
-            - ./Postgresql/work:/work
+            - ./postgresql/data:/var/lib/postgresql/data
+            - ./works:/works
         environment:
             #POSTGRES_USER: postgres
             POSTGRES_PASSWORD: pass
@@ -17,13 +19,16 @@ services:
         image: rabbitmq-js:v1
         restart: always
         build:
-            context: ./Rabbitmq
+            context: ./rabbitmq
+        networks:
+            - network-docker-devtool
         ports:
             - 5672:5672
             - 8080:15672
         volumes:
-            - ./Rabbitmq/data:/var/lib/rabbitmq/
-            - ./Rabbitmq/logs:/var/log/rabbitmq/
+            - ./rabbitmq/data:/var/lib/rabbitmq/
+            - ./rabbitmq/logs:/var/log/rabbitmq/
+            - ./works:/works
         environment:
             RABBITMQ_DEFAULT_USER: user
             RABBITMQ_DEFAULT_PASS: pass
@@ -31,11 +36,14 @@ services:
         image: mariadb-js:v1
         restart: always
         build:
-            context: ./Mariadb
+            context: ./mariadb
+        networks:
+            - network-docker-devtool
         ports:
             - 3306:3306
         volumes:
-            - ./Mariadb/data:/var/lib/mysql
+            - ./mariadb/data:/var/lib/mysql
+            - ./works:/works
         environment:
             MARIADB_USER: user
             MARIADB_PASSWORD: pass
@@ -46,9 +54,14 @@ services:
         image: radis-js:v1
         restart: always
         build:
-            context: ./Redis
+            context: ./redis
+        networks:
+            - network-docker-devtool
+        volumes:
+            - ./works:/works
         ports:
             - 6379:6379
 
-
-
+networks:
+    network-docker-devtool:
+        name: network-docker-devtool

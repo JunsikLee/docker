@@ -8,6 +8,7 @@ docker-dev-env
 * 2021.11.01 PostgreSQL, RabbitMQ 추가
 * 2021.11.09 MariadDB 추가
 * 2021.12.22 Radis 추가
+* 2021.12.30 네트워크 네임 추가, works폴더 추가
 
 </br>
 
@@ -20,7 +21,7 @@ docker-compose up --build -d
 
 ### docker-compose 종료
 <pre>
-docker-compse down
+docker-compose down
 </pre>
 
 </br>
@@ -31,4 +32,3 @@ docker-compse down
 + Rabbitmq
 + Mariaddb
 + Radis
-   
