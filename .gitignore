@@ -9,5 +9,11 @@ Rabbitmq/logs
 #Mariadb
 Mariadb/data
 
+#redis
+redis/data
+
+#etc
+works/
+
 #제외파일
 .DS_Store
