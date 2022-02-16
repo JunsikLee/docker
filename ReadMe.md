@@ -15,21 +15,24 @@
 </br>
 
 ## 사용 방법 
-### docker-compose 실행
+### 1. docker-compose 실행
 <pre>
-docker-compose up --build -d
+sh docker-on.sh
 </pre>
 
-### docker-compose 종료
+### 2. docker-compose 종료
 <pre>
-docker-compose down
+sh docker-off.sh
 </pre>
 
 </br>
 
-## 도커 정보
-+  도커 네트워크 이름 - network-docker-devtool]
-
+## 네트워크 연결 하기
++ 도커 네트워크 이름 - network-docker-devtool
++ 도커 네트워크 연결 예제 코드 (연결시 호스트 명 service 이름 이용)
+```
+docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
+```
 </br>
 
 ## 설치 정보
