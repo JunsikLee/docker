@@ -36,7 +36,7 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 </br>
 
 ## 설치 정보
-### 1.Postgresql
+### 1. Postgresql
 ```
 포트 - 5432
 아이디 - postgres
@@ -45,7 +45,7 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 
 </br>
 
-### 2.Rabbitmq
+### 2. Rabbitmq
 ```
 관리페이지 - http://127.0.0.1:15672
 포트 - 5672
@@ -54,7 +54,7 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 ```
 </br>
 
-### 3.Mariaddb
+### 3. Mariaddb
 ```
 포트 - 3306
 아이디 - user
@@ -63,7 +63,7 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 
 </br>
 
-### 4.Radis
+### 4. Radis
 ```
 포트 - 6379
 ```
