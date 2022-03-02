@@ -10,4 +10,4 @@ echo "=> 도커 삭제"
 docker rm centos-js
 
 echo "=> 도커 생성"
-docker run --privileged -d  -p 1022:22 --name centos-js centos-js
+docker run --privileged -d  -p 1022:22 --network network-docker-devtool --name centos-js centos-js

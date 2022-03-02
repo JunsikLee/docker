@@ -8,7 +8,7 @@ RUN yum -y install yum-fastestmirror
 # SSH
 RUN yum install -y openssh-clients openssh-server && \
     yum clean -y all && \
-    echo "root:passwd" | chpasswd
+    echo "root:root" | chpasswd
 
 RUN sed -i -e '/PermitRootLogin /d; $a PermitRootLogin yes' /etc/ssh/sshd_config && \
     sed -i -e '/PasswordAuthentication /d; $a PasswordAuthentication yes' /etc/ssh/sshd_config
@@ -30,4 +30,4 @@ EXPOSE 22
 COPY sh/setup-java.sh /root/setup-java.sh
 COPY sh/setup-locale.sh /root/setup-locale.sh 
 
-CMD ["/usr/sbin/sshd", "-D", "-e"]
+CMD ["/usr/sbin/sshd", "-D"]
