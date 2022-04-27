@@ -1,19 +1,19 @@
 #Postgresql
-Postgresql/data
-Postgresql/work
+tool/Postgresql/data
+tool/Postgresql/work
 
 #Rabbitmq
-Rabbitmq/data
-Rabbitmq/logs
+tool/Rabbitmq/data
+tool/Rabbitmq/logs
 
 #Mariadb
-Mariadb/data
+tool/Mariadb/data
 
 #redis
-redis/data
+tool/redis/data
 
 #etc
-works/
+tool/works/
 
 #제외파일
 .DS_Store

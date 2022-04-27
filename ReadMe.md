@@ -1,7 +1,5 @@
 # docker-dev-env
-* 개발을 위한 도구를 도커를 이용해서 한번에 사용가능 docker-compose 스크립트 제작
-* 데이터베이스, 메세지 큐, 메모리 디비 포함
-
+개발 환경 구축을 위한 도커 파일 모음 
 </br>
 
 ## 수정 이력
@@ -17,56 +15,10 @@
 
 </br>
 
-## 사용 방법 
-### 1. docker-compose 실행
-<pre>
-sh docker-on.sh
-</pre>
+### os 폴더
++ 운영체제 Dockerfile 모음
++ centos, ubuntu, rocky
 
-### 2. docker-compose 종료
-<pre>
-sh docker-off.sh
-</pre>
-
-</br>
-
-## 네트워크 연결 하기
-+ 도커 네트워크 이름 - network-docker-devtool
-+ 도커 네트워크 연결 예제 코드 (연결시 호스트 명 service 이름 이용)
-```
-docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
-```
-</br>
-
-## 설치 정보
-### 1. Postgresql
-```
-포트 - 5432
-아이디 - postgres
-패스워드 - pass
-```
-
-</br>
-
-### 2. Rabbitmq
-```
-관리페이지 - http://127.0.0.1:15672
-포트 - 5672
-아이디 - user
-패스워드 - pass
-```
-</br>
-
-### 3. Mariaddb
-```
-포트 - 3306
-아이디 - user
-패스워드 - pass
-```
-
-</br>
-
-### 4. Radis
-```
-포트 - 6379
-```
+### tool 폴더
+* 개발을 위한 도구를 도커를 이용해서 한번에 사용가능 docker-compose 스크립트 제작
+* 데이터베이스, 메세지 큐, 메모리 디비 포함
