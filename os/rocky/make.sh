@@ -10,4 +10,5 @@ echo "=> 도커 삭제"
 docker rm rocky
 
 echo "=> 도커 생성"
-docker run -d --privileged -p 3080:80 -p 3022:22 --network network-docker-devtool --name rocky rocky-js
+#네트워크 옵션 추시  => --network network-docker-devtool
+docker run -d --privileged -p 3080:80 -p 3022:22 --name rocky rocky-js
