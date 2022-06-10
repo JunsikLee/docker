@@ -10,8 +10,9 @@
 * 2021.12.30 네트워크 네임 추가, works폴더 추가
 * 2022.02.16 docker 이미지 zsh 설치 되도록 수정
 * 2022.03.02 dockerfiles 폴더 추가 (단일 도커 파일)
-* 2021.04.25 dockerfiles -> os 폴더 명으로 변경, os 폴더 README 추가
-* 2021.04.27 os rocky 추가 
+* 2022.04.25 dockerfiles -> os 폴더 명으로 변경, os 폴더 README 추가
+* 2022.04.27 os rocky 추가 
+* 2022.06.10 kafka 추가
 
 </br>
 
