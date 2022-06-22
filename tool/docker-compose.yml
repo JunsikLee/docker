@@ -19,11 +19,14 @@ services:
             - network-docker-devtool
         ports:
             - 9092:9092
+            - 29094:29094
         environment:
-            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-            KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-            KAFKA_ADVERTISED_HOST_NAME: kafka
-            KAFKA_ADVERTISED_PORT: 9092
+            KAFKA_LISTENERS: LISTENER_BOB://kafka:29092,LISTENER_FRED://kafka:9092,LISTENER_ALICE://kafka:29094
+            KAFKA_ADVERTISED_LISTENERS: LISTENER_BOB://kafka:29092,LISTENER_FRED://localhost:9092,LISTENER_ALICE://never-gonna-give-you-up:29094
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_BOB:PLAINTEXT,LISTENER_FRED:PLAINTEXT,LISTENER_ALICE:PLAINTEXT
+            KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_BOB
+            #KAFKA_ADVERTISED_HOST_NAME: kafka
+            #KAFKA_ADVERTISED_PORT: 9092
             KAFKA_CREATE_TOPICS: "test-topic:1:1"
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
         volumes:
@@ -41,7 +44,7 @@ services:
             - "9091:9091"
 
         environment:
-            - KAFKA_BROKERCONNECT=kafka:9092
+            - KAFKA_BROKERCONNECT=kafka:29092
             - SERVER_PORT=9091
 
     postgresql:
