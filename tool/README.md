@@ -51,3 +51,8 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 ```
 포트 - 6379
 ```
+
+### 5. Kafka, zookeeper
+```
+Kafka 포트 - 9092
+```
