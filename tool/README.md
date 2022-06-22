@@ -52,7 +52,8 @@ docker run -d --name ubuntu --network network-docker-devtool ubuont:20.04 bash
 포트 - 6379
 ```
 
-### 5. Kafka, zookeeper
+### 5. Kafka, zookeeper, kafdrop
 ```
 Kafka 포트 - 9092
+kafdrop 포트 - 9091
 ```
