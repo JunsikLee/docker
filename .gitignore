@@ -1,19 +1,24 @@
-#Postgresql
+#Tool 
 tool/Postgresql/data
 tool/Postgresql/work
-
-#Rabbitmq
 tool/Rabbitmq/data
 tool/Rabbitmq/logs
-
-#Mariadb
 tool/Mariadb/data
-
-#redis
 tool/redis/data
-
-#etc
 tool/works/
+
+#Elk
+elk/data01
+elk/data02
+elk/data03
+
+#Elk
+elk/data01
+elk/data02
+elk/data03
+
+#kafka
+kafka/data
 
 #제외파일
 .DS_Store

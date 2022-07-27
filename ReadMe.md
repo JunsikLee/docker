@@ -16,6 +16,7 @@
 * 2022.06.10 tool kafka 추가
 * 2022.06.23 lb 로드 밸런서 예제 추가
 * 2022.06.23 README 정리
+* 2022.07.27 elk 폴더 -> Elasticsearch, Kibana 추가, kafka 분리
 
 </br>
 
@@ -35,3 +36,8 @@
 * docker-compose 스크립트 제작
 * 도커 로드 밸런서 구현 예제
 * nginx, tomcat 구성
+
+### 🧑🏻‍💻 elk 폴더
+* docker-compose 스크립트 제작
+* 도커 로드 밸런서 구현 예제
+* Elasticsearch, Kibana 구성
