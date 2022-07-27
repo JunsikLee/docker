@@ -39,5 +39,8 @@
 
 ### 🧑🏻‍💻 elk 폴더
 * docker-compose 스크립트 제작
-* 도커 로드 밸런서 구현 예제
 * Elasticsearch, Kibana 구성
+
+### 🧑🏻‍💻 kafka 폴더
+* docker-compose 스크립트 제작
+* Kafka, Zookeeper, Kafdrop 구성
