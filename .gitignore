@@ -18,7 +18,8 @@ elk/data02
 elk/data03
 
 #kafka
-kafka/data
+kafka-single/data
+kafka-muilt/data
 
 #제외파일
 .DS_Store

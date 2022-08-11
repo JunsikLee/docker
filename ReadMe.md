@@ -17,6 +17,7 @@
 * 2022.06.23 lb 로드 밸런서 예제 추가
 * 2022.06.23 README 정리
 * 2022.07.27 elk 폴더 -> Elasticsearch, Kibana 추가, kafka 분리
+* 2022.08.11 kafka-muilt 추가 (주키퍼 3대, 카프카 3대)
 
 </br>
 
@@ -41,6 +42,12 @@
 * docker-compose 스크립트 제작
 * Elasticsearch, Kibana 구성
 
-### 🧑🏻‍💻 kafka 폴더
+### 🧑🏻‍💻 kafka-single 폴더
 * docker-compose 스크립트 제작
-* Kafka, Zookeeper, Kafdrop 구성
+* Kafka 1대, Zookeeper 1대, Kafdrop 구성
+
+### 🧑🏻‍💻 kafka-muilt 폴더
+* docker-compose 스크립트 제작
+* Kafka 3대, Zookeeper3대, Kafdrop 구성
+
+
