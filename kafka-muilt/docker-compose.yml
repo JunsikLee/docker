@@ -35,6 +35,7 @@ services:
 
   kafka-1:
     image: confluentinc/cp-kafka:latest
+    restart: always
     depends_on:
       - zookeeper-1
       - zookeeper-2
@@ -52,9 +53,12 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_RETENTION_HOURS: 8760
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
 
   kafka-2:
     image: confluentinc/cp-kafka:latest
+    restart: always
     depends_on:
       - zookeeper-1
       - zookeeper-2
@@ -72,9 +76,12 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_RETENTION_HOURS: 8760
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
 
   kafka-3:
     image: confluentinc/cp-kafka:latest
+    restart: always
     depends_on:
       - zookeeper-1
       - zookeeper-2
@@ -92,15 +99,14 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_RETENTION_HOURS: 8760
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
 
   kafdrop:
     image: obsidiandynamics/kafdrop
     container_name: kafdrop
     restart: always
     depends_on:
-      - zookeeper-1
-      - zookeeper-2
-      - zookeeper-3
       - kafka-1
       - kafka-2
       - kafka-3
