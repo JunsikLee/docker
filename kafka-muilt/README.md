@@ -25,10 +25,15 @@ localhost:30011,localhost:30012,localhost:30013
 
 ### 🧑🏻‍💻 2.2 kafka 명령
 ```
-# 토픽 리스트
+# 🦋 토픽 리스트
 ./kafka-topics.sh --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --list
-# 토픽 생성
-./kafka-topics.sh --create --topic my-topic --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --replication-factor 3 --partitions 10
-
+# 🦋  토픽 생성
+./kafka-topics.sh --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --create --topic my-topic --replication-factor 3 --partitions 10
+# 🦋  토픽 삭제
+./kafka-topics.sh --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --delete --topic my-topic
+# 🦋  메세지 전송
+./kafka-console-producer.sh --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --topic my-topic 
+# 🦋  메세지 수신
+./kafka-console-consumer.sh --bootstrap-server=localhost:30011,localhost:30012,localhost:30013 --topic my-topic --group test-consumer --from-beginning
 ```
 </br>
