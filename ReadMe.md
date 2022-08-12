@@ -18,6 +18,7 @@
 * 2022.06.23 README 정리
 * 2022.07.27 elk 폴더 -> Elasticsearch, Kibana 추가, kafka 분리
 * 2022.08.11 kafka-muilt 추가 (주키퍼 3대, 카프카 3대)
+* 2022.08.12 elk 수정 (logstash 추가)
 
 </br>
 

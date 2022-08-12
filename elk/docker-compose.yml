@@ -1,13 +1,13 @@
 version: "3.9"
 services:
-  es01:
+  elasticsearch-1:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
-    container_name: es01
+    container_name: elasticsearch-1
     environment:
-      - node.name=es01
+      - node.name=elasticsearch-1
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es02,es03
-      - cluster.initial_master_nodes=es01,es02,es03
+      - discovery.seed_hosts=elasticsearch-2,elasticsearch-3
+      - cluster.initial_master_nodes=elasticsearch-1,elasticsearch-2,elasticsearch-3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     ulimits:
@@ -15,20 +15,20 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./data01:/usr/share/elasticsearch/data
+      - ./data/elasticsearch-1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
       - network-docker-devtool
 
-  es02:
+  elasticsearch-2:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
-    container_name: es02
+    container_name: elasticsearch-2
     environment:
-      - node.name=es02
+      - node.name=elasticsearch-2
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es01,es03
-      - cluster.initial_master_nodes=es01,es02,es03
+      - discovery.seed_hosts=elasticsearch-1,elasticsearch-3
+      - cluster.initial_master_nodes=elasticsearch-1,elasticsearch-2,elasticsearch-3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     ulimits:
@@ -36,18 +36,18 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./data02:/usr/share/elasticsearch/data
+      - ./data/elasticsearch-2:/usr/share/elasticsearch/data
     networks:
       - network-docker-devtool
 
-  es03:
+  elasticsearch-3:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
-    container_name: es03
+    container_name: elasticsearch-3
     environment:
-      - node.name=es03
+      - node.name=elasticsearch-3
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es01,es02
-      - cluster.initial_master_nodes=es01,es02,es03
+      - discovery.seed_hosts=elasticsearch-1,elasticsearch-2
+      - cluster.initial_master_nodes=elasticsearch-1,elasticsearch-2,elasticsearch-3
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     ulimits:
@@ -55,7 +55,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./data03:/usr/share/elasticsearch/data
+      - ./data/elasticsearch-3:/usr/share/elasticsearch/data
     networks:
       - network-docker-devtool
 
@@ -65,9 +65,26 @@ services:
     ports:
       - 5601:5601
     environment:
-      - ELASTICSEARCH_HOSTS=["http://es01:9200"]
+      - ELASTICSEARCH_HOSTS=["http://elasticsearch-1:9200"]
     depends_on:
-      - es01
+      - elasticsearch-1
+      - elasticsearch-2
+      - elasticsearch-3
+    networks:
+      - network-docker-devtool
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.2.2
+    container_name: logstash
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    depends_on:
+      - kibana
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./data/logstash-data:/usr/share/logstash/data
+      - ./data/logstash-logs:/usr/share/logstash/logs
     networks:
       - network-docker-devtool
 

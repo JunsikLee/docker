@@ -13,9 +13,7 @@ elk/data02
 elk/data03
 
 #Elk
-elk/data01
-elk/data02
-elk/data03
+elk/data
 
 #kafka
 kafka-single/data
