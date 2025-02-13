@@ -21,3 +21,5 @@ kafka-muilt/data
 
 #제외파일
 .DS_Store
+nextcloud/db_data
+nextcloud/nextcloud_data
