@@ -6,7 +6,7 @@ ENV TZ=Asia/Seoul
 
 #ARG ROOT_PASS=root
 ARG USER_NAME=user
-ARG USER_PASS=user
+ARG USER_PASS='user'
 
 # OpenSSH 서버 설치
 RUN apt-get update && \
